@@ -14,7 +14,7 @@ mockdataresponse = ()=> {
 
     _mockResponseData.numberRamdomLimit = 100;
 
-    _mockResponseData.stringRamdomLimit = 100;
+    _mockResponseData.stringRamdomLimit = 10;
 
     _mockResponseData.isObject = (data) => (typeof data === "object" && data.constructor.name === "Object")
 
@@ -27,6 +27,8 @@ mockdataresponse = ()=> {
         for(key in data) {
             if(_mockResponseData.isObject(data[key])) {
                 content += "<div style='margin-left:10px;'>"+key+ " : " + generateHTML(data[key])+",</div>";
+            } else if(_mockResponseData.isArray(data[key])) {
+                content += "<div style='margin-left:10px;'>"+key+ " : [<b>" + data[key].join("</b>,<b>")+"</b>] ,</div>";
             } else {
                 content += "<div style='margin-left:10px;'>"+key+ " :  <b>" +data[key]+"</b>,</br></div>"
             }
@@ -97,7 +99,7 @@ mockdataresponse = ()=> {
 
         for(let i=0;i<length;i++) {
 
-            let randomness = Math.floor((Math.random()*stringDen.length) + 1);
+            let randomness = Math.floor((Math.random()*(stringDen.length-1)) + 1);
 
             randomString += stringDen[randomness];
         }
@@ -107,7 +109,7 @@ mockdataresponse = ()=> {
 
     var generateRandomNumber = () => Math.floor((Math.random() * _mockResponseData.numberRamdomLimit) + 1)
 
-    var generateRandomBoolean = () => (Math.floor((Math.random() * _mockResponseData.stringRamdomLimit) + 1)%2)===0
+    var generateRandomBoolean = () => (Math.floor((Math.random() * _mockResponseData.numberRamdomLimit) + 1)%2)===0
     
     return _mockResponseData;
 }
