@@ -1,0 +1,23 @@
+{
+  "name": "mock-response",
+  "version": "1.0.0",
+  "description": "mock data response for offline testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "mock",
+    "data",
+    "mock",
+    "sturctured",
+    "response",
+    "mock",
+    "response"
+  ],
+  "author": "devilking15292",
+  "license": "ISC",
+  "dependencies": {
+    "file-system": "^2.2.2"
+  }
+}

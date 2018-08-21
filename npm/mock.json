@@ -1,0 +1,12 @@
+{
+   "resp" : {
+        "test" : "string",
+        "chaley" : "number",
+        "yu" : "bool",
+        "hello" : {
+            "the" : "string"
+        },
+        "array": ["string"],
+        "arrayNum": ["number"]
+    }
+}

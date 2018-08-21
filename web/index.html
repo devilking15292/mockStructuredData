@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <script type="text/javascript" src="./index.js"></script>
+        <script> 
+            generateMock = () => {
+                document.getElementById('result').innerHTML = mockResponseData.generateHTML(mockResponseData.mock(document.getElementById('jsondunk').value));
+            }
+        </script>
+    </head>
+    <body>
+        <textarea id="jsondunk" cols="30" rows="10"></textarea>
+        <input type="button" value="generate" onclick="generateMock()" />
+        <div id="result"></div>
+    </body>
+</html>
